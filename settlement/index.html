@@ -235,6 +235,7 @@
 providers.ws = new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "tamako-pay");
 providers.local = new Scaffolding.Cloud.LocalStorageProvider("cloudvariables:tamako-pay");
 for (const provider of Object.values(providers)) scaffolding.addCloudProvider(provider);
+scaffolding.addCloudProviderOverride("☁ 店舗アイコン", providers["ws"] || null);
 scaffolding.addCloudProviderOverride("☁ バーコード", providers["ws"] || null);
 scaffolding.addCloudProviderOverride("☁ 値段", providers["ws"] || null);
 scaffolding.addCloudProviderOverride("☁ データ1", providers["ws"] || null);
@@ -245,8 +246,7 @@ scaffolding.addCloudProviderOverride("☁ データ5", providers["ws"] || null);
 scaffolding.addCloudProviderOverride("☁ データ6", providers["ws"] || null);
 scaffolding.addCloudProviderOverride("☁ データ7", providers["ws"] || null);
 scaffolding.addCloudProviderOverride("☁ データ8", providers["ws"] || null);
-scaffolding.addCloudProviderOverride("☁ 店舗アイコン", providers["local"] || null);
-scaffolding.addCloudProviderOverride("☁ 店舗ID", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ 店舗ID", providers["local"] || null);
 };
       } catch (error) {
         console.error(error);
