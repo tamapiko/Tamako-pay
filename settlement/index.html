@@ -231,7 +231,23 @@
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "tamako-pay"));
+        {const providers = {};
+providers.ws = new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "tamako-pay");
+providers.local = new Scaffolding.Cloud.LocalStorageProvider("cloudvariables:tamako-pay");
+for (const provider of Object.values(providers)) scaffolding.addCloudProvider(provider);
+scaffolding.addCloudProviderOverride("☁ バーコード", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ 値段", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ1", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ2", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ3", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ4", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ5", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ6", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ7", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ データ8", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ 店舗アイコン", providers["local"] || null);
+scaffolding.addCloudProviderOverride("☁ 店舗ID", providers["ws"] || null);
+};
       } catch (error) {
         console.error(error);
       }
