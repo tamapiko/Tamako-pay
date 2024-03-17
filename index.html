@@ -111,10 +111,10 @@
       border-radius: 4px;
     }
     .control-button:hover {
-      background: #ff4c4c26;
+      background: #cde8b526;
     }
     .control-button.active {
-      background: #ff4c4c59;
+      background: #cde8b559;
     }
     .fullscreen-button {
       background: white !important;
@@ -132,15 +132,15 @@
       cursor: auto;
     }
     .sc-monitor-root[data-opcode^="data_"] .sc-monitor-value-color {
-      background-color: #ff8c1a;
+      background-color: #76bb40;
     }
     .sc-monitor-row-value-outer {
-      background-color: #fc662c;
+      background-color: #76bb40;
     }
     .sc-monitor-row-value-editing .sc-monitor-row-value-outer {
-      background-color: #e25b27;
+      background-color: #65a137;
     }
-              </style>
+          </style>
   <meta name="theme-color" content="#12151a">
   <meta name="description" content="Tamako Payはポイ活型決済サービスです。" />
   <link rel="manifest" href="./manifest.json">
@@ -211,7 +211,7 @@
       scaffolding.width = 202;
       scaffolding.height = 360;
       scaffolding.resizeMode = "preserve-ratio";
-      scaffolding.editableLists = false;
+      scaffolding.editableLists = true;
       scaffolding.usePackagedRuntime = true;
       scaffolding.setup();
       scaffolding.appendTo(appElement);
@@ -227,8 +227,8 @@
         videoProvider: vm.runtime.ioDevices.video.provider
       };
 
-      scaffolding.setUsername("player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
-      scaffolding.setAccentColor("#ff4c4c");
+      scaffolding.setUsername("Tamapiko".replace(/#/g, () => Math.floor(Math.random() * 10)));
+      scaffolding.setAccentColor("#cde8b5");
 
       try {
         scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "tamako-pay"));
