@@ -260,7 +260,22 @@
       handleError(e);
     }
   </script>
-  
+  <script>
+    try {
+      var correctPassword = 'Tamako-pay1234'; // 正しいパスワードを設定
+
+var userPassword = prompt('Please enter the password:');
+if (userPassword === correctPassword) {
+    // Add the code to execute when the password is correct
+    console.log('The password is correct.');
+} else {
+    window.close(); // This will attempt to close the current tab
+}
+
+    } catch (e) {
+      handleError(e);
+    }
+  </script>
   
     <script>
       const getProjectData = (function() {
